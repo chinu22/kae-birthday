@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kae ♡ | A Story Written by Chinu</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Georgia,serif;
+background:linear-gradient(to bottom,#fff8f8,#fffdf8);
+overflow:hidden;
+color:#5b4b4b;
+}
+
+.page{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+overflow-y:auto;
+text-align:center;
+transition:1s;
+}
+
+.book{
+background:white;
+width:min(92vw,850px);
+padding:30px;
+border-radius:30px;
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+animation:pageTurn 1s;
+}
+
+@keyframes pageTurn{
+
+0%{
+transform:rotateY(-90deg);
+opacity:0;
+}
+
+100%{
+transform:rotateY(0deg);
+opacity:1;
+}
+
+}
+
+h1{
+font-size:70px;
+color:#e88cab;
+margin-bottom:20px;
+}
+
+h2{
+font-size:40px;
+color:#d57a98;
+margin-bottom:20px;
+}
+
+p{
+font-size:20px;
+line-height:1.8;
+}
+
+button{
+padding:15px 35px;
+margin-top:25px;
+border:none;
+border-radius:40px;
+background:#f0b6c8;
+color:white;
+font-size:18px;
+cursor:pointer;
+transition:.4s;
+}
+
+button:hover{
+background:#e88cab;
+}
+
+input{
+width:250px;
+padding:15px;
+border:none;
+border-radius:40px;
+background:#fdf2f5;
+font-size:18px;
+text-align:center;
+margin-top:20px;
+}
+
+.sparkle{
+position:fixed;
+bottom:-50px;
+font-size:25px;
+opacity:.7;
+pointer-events:none;
+animation:float 10s linear infinite;
+z-index:999;
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(0);
+opacity:0;
+}
+
+10%{
+opacity:.8;
+}
+
+100%{
+transform:translateY(-120vh) rotate(360deg);
+opacity:0;
+}
+
+}
+
+.star{
+position:fixed;
+font-size:20px;
+animation:twinkle 2s infinite alternate;
+opacity:.6;
+}
+
+@keyframes twinkle{
+
+0%{
+opacity:.2;
+transform:scale(1);
+}
+
+100%{
+opacity:1;
+transform:scale(1.4);
+}
+
+}
+
+.profilePic{
+width:180px;
+height:180px;
+object-fit:cover;
+border-radius:50%;
+border:8px solid #f0b6c8;
+padding:5px;
+background:white;
+box-shadow:0 5px 20px rgba(240,182,200,0.6);
+margin:20px auto;
+display:block;
+}
+
+.memoryPic{
+max-width:220px;
+max-height:320px;
+width:auto;
+height:auto;
+object-fit:contain;
+background:white;
+padding:10px;
+border-radius:8px;
+box-shadow:0 5px 15px rgba(0,0,0,.2);
+transition:.4s;
+}
+
+.memoryPic:nth-child(odd){
+transform:rotate(-5deg);
+}
+
+.memoryPic:nth-child(even){
+transform:rotate(5deg);
+}
+
+.memoryPic:hover{
+transform:scale(1.08);
+}
+
+.gallery{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:25px;
+padding-bottom:50px;
+}
+
+.waves{
+font-size:30px;
+animation:waves 2s infinite alternate;
+}
+
+@keyframes waves{
+
+0%{
+transform:translateY(0px);
+}
+
+100%{
+transform:translateY(-10px);
+}
+
+}
+
+.moon{
+position:fixed;
+top:20px;
+right:30px;
+background:none;
+border:none;
+font-size:28px;
+cursor:pointer;
+opacity:0.3;
+z-index:99999;
+margin:0;
+padding:0;
+}
+
+.moon:hover{
+opacity:1;
+transform:scale(1.2);
+}
+
+/* MOBILE RESPONSIVE */
+
+@media screen and (max-width:768px){
+
+.book{
+width:95vw;
+padding:20px;
+}
+
+h1{
+font-size:clamp(38px,8vw,70px);
+color:#e88cab;
+margin-bottom:20px;
+}
+
+h2{
+font-size:clamp(24px,5vw,40px);
+color:#d57a98;
+margin-bottom:20px;
+}
+
+p{
+font-size:clamp(15px,3.5vw,20px);
+line-height:1.8;
+}
+
+button{
+font-size:14px;
+padding:12px 25px;
+}
+
+input{
+width:90%;
+font-size:16px;
+}
+
+.profilePic{
+width:110px;
+height:110px;
+}
+
+.memoryPic{
+max-width:100%;
+max-height:240px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<audio id="bgMusic" loop>
+<source src="music.mp3.mpeg">
+</audio>
+
+<div class="sparkle" style="left:5%">💗</div>
+<div class="sparkle" style="left:25%;animation-delay:2s;">✨</div>
+<div class="sparkle" style="left:45%;animation-delay:4s;">🎀</div>
+<div class="sparkle" style="left:65%;animation-delay:1s;">💖</div>
+<div class="sparkle" style="left:85%;animation-delay:3s;">✨</div>
+
+<div class="star" style="top:10%;left:15%;">⭐</div>
+<div class="star" style="top:25%;left:80%;animation-delay:1s;">✨</div>
+<div class="star" style="top:60%;left:10%;animation-delay:2s;">⭐</div>
+<div class="star" style="top:80%;left:85%;animation-delay:1.5s;">✨</div>
+<div class="star" style="top:45%;left:60%;animation-delay:0.5s;">⭐</div>
+
+<div class="star" style="top:10%;left:15%;">⭐</div>
+<div class="star" style="top:25%;left:80%;animation-delay:1s;">✨</div>
+<div class="star" style="top:50%;left:10%;animation-delay:2s;">⭐</div>
+<div class="star" style="top:80%;left:85%;animation-delay:1.5s;">✨</div>
+
+<button class="moon" onclick="showSecret()">
+🌙
+</button>
+
+<!-- PASSWORD PAGE -->
+
+<div class="page" id="passwordPage">
+
+<div class="book">
+
+<h2>Before You Enter ✨</h2>
+
+<p>What does Chinu call you?</p>
+
+<input type="text" id="answer">
+
+<br>
+
+<button onclick="openBook()">
+
+Open The Book 📖
+
+</button>
+
+</div>
+
+</div>
+
+<!-- COVER -->
+
+<div class="page" id="coverPage" style="display:none;">
+
+<div class="book">
+
+<h1>Kae ♡</h1>
+
+<h2>On Her Twentieth Chapter</h2>
+
+<p>
+
+A story made with love,
+
+filled with laughter,
+
+Taylor songs,
+
+late-night conversations,
+
+beautiful memories,
+
+and all the little moments
+
+that somehow became home.
+
+</p>
+
+<br>
+
+<p>
+
+Written with love,
+
+<br><br>
+
+<b>Chinu 🎀</b>
+
+</p>
+
+<button onclick="startStory()">
+
+Open The Book ✨
+
+</button>
+
+</div>
+
+</div>
+
+<!-- DEAR KAE -->
+
+<div class="page" id="dearPage" style="display:none;">
+
+<div class="book">
+
+<h2>💌 Dear Kae</h2>
+
+<p>
+
+We imagined celebrating this chapter differently,
+
+but life had other plans.
+
+Still,
+
+nothing changes how special you are.
+
+Thank you for being my safe place.
+
+Thank you for being home.
+
+<br><br>
+
+Love,
+
+<br><br>
+
+<b>Chinu 🎀</b>
+
+</p>
+
+<button onclick="meetKae()">
+
+Meet The Birthday Girl 🌸
+
+</button>
+
+</div>
+
+</div>
+
+<!-- MEET KAE -->
+
+<div class="page" id="meetPage" style="display:none;align-items:flex-start;padding-top:80px;">
+
+<div class="book">
+
+<h2>🌸 Meet The Birthday Girl 🌸</h2>
+
+<img src="photos/pic1.img.jpeg" class="profilePic">
+
+<p>
+
+📚 Professional Book Lover
+
+<br><br>
+
+✍🏻 Writes poems that hold entire worlds
+
+<br><br>
+
+🎤 Certified Swiftie
+
+<br><br>
+
+☕ FRIENDS Enthusiast
+
+<br><br>
+
+🐶 Dog Mom
+
+<br><br>
+
+🍜 Chaotic Foodie
+
+</p>
+
+<button onclick="showEras()">
+
+Kae's Eras ✨
+
+</button>
+
+</div>
+
+</div>
+
+<!-- ERAS PAGE -->
+
+<div class="page" id="erasPage" style="display:none;">
+
+<div class="book">
+
+<h2>🎤 Kae's Eras 🎤</h2>
+
+<p>
+
+💗 Lover Era
+
+<br><br>
+
+🌲 Folklore Era
+
+<br><br>
+
+☕ FRIENDS Era
+
+<br><br>
+
+🐶 Dog Mom Era
+
+<br><br>
+
+📚 Bookworm Era
+
+<br><br>
+
+✍🏻 Poetry Girl Era
+
+<br><br>
+
+✨ Main Character Era
+
+</p>
+
+<button onclick="marinePage()">
+
+Continue The Story 🌊
+
+</button>
+
+</div>
+
+</div>
+
+<!-- THE EVENINGS PAGE -->
+
+<div class="page" id="marinePage" style="display:none;align-items:flex-start;padding-top:80px;">
+
+<div class="book">
+
+<h2>🌊 The Evenings I Hope We Never Forget 🌊</h2>
+
+<p>
+
+Some sunsets became memories.
+
+<br><br>
+
+Some conversations became comfort.
+
+<br><br>
+
+Some people became home.
+
+<br><br>
+
+And somehow,
+
+ordinary evenings became chapters worth keeping.
+
+<br><br>
+
+Thank you for being part of mine. 🤍
+
+</p>
+
+<br>
+
+<div class="waves">
+
+🌊 🌊 🌊 🌊 🌊
+
+</div>
+
+<br><br>
+
+<button onclick="friendsPage()">
+
+Our Sitcom Episodes 📺
+
+</button>
+
+</div>
+
+</div>
+
+<!-- FRIENDS PAGE -->
+
+<div class="page" id="friendsPage" style="display:none;align-items:flex-start;padding-top:80px;">
+
+<div class="book">
+
+<h2>☕ The FRIENDS Episodes ☕</h2>
+
+<p>
+
+📺 The One Where We Couldn't Stop Laughing
+
+<br><br>
+
+📺 The One With Endless Conversations
+
+<br><br>
+
+📺 The One Where Chinu Listened
+
+<br><br>
+
+📺 The One With Random Dreams
+
+<br><br>
+
+📺 The One With Chapter Twenty
+
+<br><br>
+
+📺 The One We'll Remember Forever
+
+</p>
+
+<button onclick="scrapbookPage()">
+
+Memory Scrapbook 📸
+
+</button>
+
+</div>
+
+</div>
+
+<!-- SCRAPBOOK PAGE -->
+
+<div class="page" id="scrapbookPage" style="display:none;align-items:flex-start;padding-top:80px;">
+
+<div class="book">
+
+<h2>📸 Our Little Scrapbook 📸</h2>
+
+<br>
+
+<div class="gallery">
+
+<img src="photos/pic4.img.jpeg" class="memoryPic">
+<img src="photos/pic5.img.jpeg" class="memoryPic">
+<img src="photos/pic6.img.jpeg" class="memoryPic">
+<img src="photos/pic7.img.jpeg" class="memoryPic">
+<img src="photos/pic8.img.jpeg" class="memoryPic">
+<img src="photos/pic9.img.jpeg" class="memoryPic">
+<img src="photos/pic10.img.jpeg" class="memoryPic">
+<img src="photos/pic11.img.jpeg" class="memoryPic">
+<img src="photos/pic12.img.jpeg" class="memoryPic">
+<img src="photos/pic13.img.jpeg" class="memoryPic">
+<img src="photos/pic14.img.jpeg" class="memoryPic">
+<img src="photos/pic15.img.jpeg" class="memoryPic">
+<img src="photos/pic16.img.jpeg" class="memoryPic">
+<img src="photos/pic17.img.jpeg" class="memoryPic">
+<img src="photos/pic18.img.jpeg" class="memoryPic">
+
+</div>
+
+<br><br>
+
+<p>
+
+✨ Another memory worth keeping
+
+<br><br>
+
+🤍 Our chaos
+
+<br><br>
+
+🌷 Favorite person
+
+<br><br>
+
+📸 The prettiest chapter
+
+</p>
+
+<button onclick="reasonsPage()">
+
+One Last Chapter 💗
+
+</button>
+
+</div>
+
+</div>
+
+<!-- REASONS PAGE -->
+
+<div class="page" id="reasonsPage" style="display:none;align-items:flex-start;padding-top:80px;">
+
+<div class="book">
+
+<h2>💗 Reasons Why Chinu Loves Kae As A Friend 💗</h2>
+
+<p>
+
+📚 Because you romanticize life.
+
+<br><br>
+
+✍🏻 Because your poems hold feelings.
+
+<br><br>
+
+🐶 Because you love deeply.
+
+<br><br>
+
+🎤 Because Taylor songs hit harder with you.
+
+<br><br>
+
+😂 Because we laugh at stupid things.
+
+<br><br>
+
+🌷 Because you care.
+
+<br><br>
+
+💗 Because somehow, you became family.
+
+</p>
+
+<button onclick="cakePage()">
+
+Make A Wish 🎂
+
+</button>
+
+</div>
+
+</div>
+
+<!-- CAKE PAGE -->
+
+<div class="page" id="cakePage"
+style="display:none;align-items:flex-start;padding-top:120px;">
+
+<div class="book">
+
+<h2>🎂 Make A Wish Kae 🎂</h2>
+
+<br>
+
+<h1 id="cake">
+
+🕯️🕯️🕯️
+
+<br>
+
+🎂
+
+</h1>
+
+<button onclick="blowCandles()">
+
+Blow The Candles 💨
+
+</button>
+
+<br><br>
+
+<p id="wishText"></p>
+
+<br>
+
+<button onclick="finalPage()">
+
+One Last Surprise ✨
+
+</button>
+
+</div>
+
+</div>
+
+<!-- FINAL LETTER -->
+
+<div class="page" id="finalPage"
+style="display:none;align-items:flex-start;padding-top:100px;">
+
+<div class="book">
+
+<h1>Happy 20th Birthday Kae 💗</h1>
+
+<p>
+
+May your books always be interesting.
+
+<br><br>
+
+May your poems always find words.
+
+<br><br>
+
+May Oreo always stay healthy.
+
+<br><br>
+
+May life always give you reasons to smile.
+
+<br><br>
+
+And if it doesn't,
+
+I hope you know you'll never have to face it alone.
+
+<br><br>
+
+Love,
+
+<br><br>
+
+<b>Chinu 🎀</b>
+
+</p>
+
+<br><br>
+
+<button onclick="chapter21()">
+
+See You In Chapter Twenty-One ✨
+
+</button>
+
+</div>
+</div>
+
+<!-- CHAPTER 21 PAGE -->
+
+<div class="page" id="chapter21Page" style="display:none;align-items:flex-start;padding-top:80px;">
+
+<div class="book">
+
+<h1>✨ Chapter Twenty-One ✨</h1>
+
+<p>
+
+And if life gets hard,
+
+<br><br>
+
+remember,
+
+<br><br>
+
+you'll always have a friend
+
+who will gladly listen to your poems,
+
+your dreams,
+
+your chaos,
+
+and your Taylor Swift playlists.
+
+<br><br>
+
+Thank you for making ordinary days special.
+
+<br><br>
+
+Here's to more laughter,
+
+more memories,
+
+and many more chapters.
+
+<br><br>
+
+Love,
+
+<br><br>
+
+<b>Chinu 🎀</b>
+
+</p>
+
+<br><br>
+
+<h2>🌷 See You In The Next Chapter 🌷</h2>
+
+<br><br>
+
+<p id="endingMessage" style="opacity:0;transition:3s;">
+
+And somewhere in another chapter,
+
+there'll be more laughter,
+
+more dreams,
+
+more gossips,
+
+and more memories waiting for us.
+
+💗
+
+
+<br><br>
+P.S. - Click on the Moon in the corner 🌙
+
+✨ ⭐ 💗 🌙 🎀 ⭐ ✨
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- SECRET MOON PAGE -->
+
+<div class="page" id="secretPage" style="display:none;align-items:flex-start;padding-top:80px;">
+
+<div class="book">
+
+<h1> Secret Message 💌</h1>
+
+<p>
+
+Thank you for staying.
+
+<br><br>
+
+Thank you for listening.
+
+<br><br>
+
+Thank you for understanding.
+
+<br><br>
+
+Thank you for making ordinary days special.
+
+<br><br>
+
+I hope life is gentle with you.
+
+<br><br>
+
+And I hope you never forget
+
+how loved and appreciated you are.
+
+<br><br>
+
+Love,
+
+<br><br>
+
+<b>Chinu 🎀</b>
+
+</p>
+
+</div>
+
+</div>
+
+
+<script>
+
+function openBook(){
+
+var answer=document.getElementById("answer").value.toLowerCase().trim();
+
+if(answer=="kae"){
+
+document.getElementById("passwordPage").style.display="none";
+
+document.getElementById("coverPage").style.display="flex";
+
+document.getElementById("bgMusic").play();
+
+}
+
+else{
+
+alert("Wrong answer 😭");
+
+}
+
+}
+
+function startStory(){
+
+document.getElementById("coverPage").style.display="none";
+document.getElementById("dearPage").style.display="flex";
+
+}
+
+function meetKae(){
+
+document.getElementById("dearPage").style.display="none";
+document.getElementById("meetPage").style.display="flex";
+
+}
+
+function showEras(){
+
+document.getElementById("meetPage").style.display="none";
+document.getElementById("erasPage").style.display="flex";
+
+}
+
+function marinePage(){
+
+document.getElementById("erasPage").style.display="none";
+document.getElementById("marinePage").style.display="flex";
+
+}
+
+function friendsPage(){
+
+document.getElementById("marinePage").style.display="none";
+document.getElementById("friendsPage").style.display="flex";
+
+}
+
+function scrapbookPage(){
+
+document.getElementById("friendsPage").style.display="none";
+document.getElementById("scrapbookPage").style.display="flex";
+
+}
+
+function reasonsPage(){
+
+document.getElementById("scrapbookPage").style.display="none";
+document.getElementById("reasonsPage").style.display="flex";
+
+}
+
+function cakePage(){
+
+document.getElementById("reasonsPage").style.display="none";
+document.getElementById("cakePage").style.display="flex";
+
+}
+
+function finalPage(){
+
+document.getElementById("cakePage").style.display="none";
+document.getElementById("finalPage").style.display="flex";
+
+}
+
+function chapter21(){
+
+document.getElementById("finalPage").style.display="none";
+
+document.getElementById("chapter21Page").style.display="flex";
+
+setTimeout(function(){
+
+let msg=document.getElementById("endingMessage");
+
+if(msg){
+
+msg.style.opacity="1";
+
+}
+
+},5000);
+
+setTimeout(function(){
+
+let line=document.getElementById("loveLine");
+
+if(line){
+
+line.style.opacity="1";
+
+}
+
+},9000);
+
+}
+
+
+function showSecret(){
+
+hideAllPages();
+
+document.getElementById("secretPage").style.display="flex";
+
+}
+
+function blowCandles(){
+
+document.getElementById("cake").innerHTML="🎂";
+
+document.getElementById("wishText").innerHTML=
+
+"✨ May your twenties be filled with poetry, books, laughter, dreams and beautiful surprises. Happy Birthday Kae 💗";
+
+confetti();
+
+}
+
+function hideAllPages(){
+
+var pages=document.getElementsByClassName("page");
+
+for(var i=0;i<pages.length;i++){
+
+pages[i].style.display="none";
+
+}
+
+}
+
+function confetti(){
+
+for(let i=0;i<120;i++){
+
+let item=document.createElement("div");
+
+item.innerHTML=["🎉","💗","✨","🎀"][Math.floor(Math.random()*4)];
+
+item.style.position="fixed";
+
+item.style.left=Math.random()*100+"vw";
+
+item.style.top=(-Math.random()*200)+"px";
+
+item.style.fontSize=(20+Math.random()*20)+"px";
+
+item.style.zIndex="9999";
+
+document.body.appendChild(item);
+
+let duration=3000+Math.random()*2000;
+
+item.animate([
+
+{
+transform:"translateY(0px) rotate(0deg)"
+},
+
+{
+transform:"translateY(120vh) rotate(720deg)"
+}
+
+],{
+
+duration:duration,
+
+iterations:1
+
+});
+
+setTimeout(()=>{
+item.remove();
+},duration);
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
+
